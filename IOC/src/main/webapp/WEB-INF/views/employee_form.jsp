@@ -53,15 +53,15 @@
 	   	</tr>
 	   	<tr>
 	       <td align="right"><form:label path="extension">EXTENSION :</form:label></td>
-	       <td><form:input path="extension"/><form:errors path="extension" cssClass="error"/></td>
+	       <td><form:input path="extension" cssClass="error"/></td>
 	   	</tr>
 	   	<tr>
 	       <td align="right"><form:label path="email">EMAIL :</form:label></td>
-	       <td><form:input path="email" /><form:errors path="email" cssClass="error"/></td>
+	       <td><form:input path="email" cssClass="error"/></td>
 	   	</tr>
 	   	<tr>
 	       <td align="right"><form:label path="officeCode">OFFICECODE :</form:label></td>
-	       <td><form:input path="officeCode" /><form:errors path="officeCode" cssClass="error"/></td>
+	       <td><form:input path="officeCode" cssClass="error"/></td>
 	   	</tr>
 	   	<tr>
 	       <td align="right"><form:label path="reportsTo">REPORTSTO :</form:label></td>
@@ -69,7 +69,7 @@
 	   	</tr>
 	   	<tr>
 	       <td align="right"><form:label path="jobTitle">JOBTITLE :</form:label></td>
-	       <td><form:input path="jobTitle" /><form:errors path="jobTitle" cssClass="error"/></td>
+	       <td><form:input path="jobTitle" cssClass="error"/></td>
 	   	</tr>
    		<tr>
    			<td align="center" colspan="2"><input type="submit"  value="Submit"/></td>
