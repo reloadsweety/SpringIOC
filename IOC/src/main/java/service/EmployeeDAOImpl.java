@@ -5,12 +5,14 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import model.Employee;
 
 
-@Component
+@Service //@Component 
 @Transactional
 public class EmployeeDAOImpl implements EmployeeDAO{
 

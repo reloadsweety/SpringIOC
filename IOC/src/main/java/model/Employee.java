@@ -4,34 +4,52 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
 	
 	@Id
+	@NotEmpty
+	@Pattern(regexp="^[0-9].*",message="not numeric")
 	@Column(name="employeeNumber")
 	private String employeeNumber;
 	
-	@Column(name="lastName")	
+	@NotEmpty
+	@Column(name="lastName"  )
 	private String lastName;
 	
+	@NotEmpty
+	@Size(min=3, max=50)
 	@Column(name="firstName")
 	private String firstName;
 	
-	@Column(name="extension")
+	@NotEmpty
+	@Column(name="extension" )
 	private String extension;
 	
-	@Column(name="email")
+	@Email
+	@Column(name="email" )
 	private String email;
 	
-	@Column(name="officeCode")
+	@NotEmpty
+	@Column(name="officeCode" )
 	private String officeCode;
 	
-	@Column(name="reportsTo")
+	@NotEmpty
+	@Size(max=1)
+	@Column(name="reportsTo" )
 	private String reportsTo;
 	
-	@Column(name="jobTitle")
+	@NotEmpty
+	@Column(name="jobTitle" )
 	private String jobTitle;
 	
 	public String getEmployeeNumber() {

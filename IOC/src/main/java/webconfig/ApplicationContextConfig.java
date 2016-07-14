@@ -12,6 +12,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import service.EmployeeDAO;
@@ -21,6 +23,7 @@ import service.VocabDAOImpl;
 
 @Configuration
 @ComponentScan("webcontroller")
+@EnableWebMvc
 @EnableTransactionManagement
 public class ApplicationContextConfig  {
 	
@@ -105,6 +108,7 @@ public class ApplicationContextConfig  {
 	    Properties properties = new Properties();
 	    properties.put("hibernate.show_sql", "true");
 	    properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+	    properties.put("hibernate.format_sql", "true");
 	    return properties;
 	}
 	
@@ -123,4 +127,6 @@ public class ApplicationContextConfig  {
 	public EmployeeDAO getEmployeeDao(SessionFactory sessionFactory) {
 		return new EmployeeDAOImpl(sessionFactory);
 	}
+	
+	
 }
