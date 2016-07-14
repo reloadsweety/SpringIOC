@@ -1,47 +1,19 @@
--- phpMyAdmin SQL Dump
--- version 4.3.11
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Jul 14, 2016 at 12:18 PM
--- Server version: 5.5.41-log
--- PHP Version: 5.6.8
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `test`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employees`
---
-
-CREATE TABLE IF NOT EXISTS `employees` (
-  `employeeNumber` int(11) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `extension` varchar(10) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `officeCode` varchar(10) NOT NULL,
-  `reportsTo` int(11) DEFAULT NULL,
-  `jobTitle` varchar(50) NOT NULL
+CREATE TABLE IF NOT EXISTS test.employees (
+  employeeNumber int(11) NOT NULL,
+  lastName varchar(50) NOT NULL,
+  firstName varchar(50) NOT NULL,
+  extension varchar(10) NOT NULL,
+  email varchar(100) NOT NULL,
+  officeCode varchar(10) NOT NULL,
+  reportsTo int(11) DEFAULT NULL,
+  jobTitle varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `employees`
+-- Dumping data for table 'employees'
 --
 
-INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`, `email`, `officeCode`, `reportsTo`, `jobTitle`) VALUES
+INSERT INTO test.employees (employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle) VALUES
 (1002, 'Murphy', 'Diane', 'x5800', 'dmurphy@classicmodelcars.com', '1', 1, 'President'),
 (1056, 'Patterson', 'Mary', 'x4611', 'mpatterso@classicmodelcars.com', '1', 1002, 'VP Sales'),
 (1076, 'Firrelli', 'Jeff', 'x9273', 'jfirrelli@classicmodelcars.com', '1', 1002, 'VP Marketing'),
@@ -72,11 +44,7 @@ INSERT INTO `employees` (`employeeNumber`, `lastName`, `firstName`, `extension`,
 --
 
 --
--- Indexes for table `employees`
+-- Indexes for table 'employees'
 --
-ALTER TABLE `employees`
-  ADD PRIMARY KEY (`employeeNumber`), ADD UNIQUE KEY `employees_pk` (`employeeNumber`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE test.employees
+  ADD PRIMARY KEY (employeeNumber), ADD UNIQUE KEY employees_pk (employeeNumber);
